@@ -1,0 +1,35 @@
+{
+  "name": "tickable-timeout",
+  "description": "Manual ticking `setTimeout`",
+  "version": "0.0.1",
+  "author": "mohayonao <mohayonao@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/mohayonao/tickable-timeout/issues"
+  },
+  "devDependencies": {
+    "6to5": "^2.13.3",
+    "espower-6to5": "^1.1.0",
+    "mocha": "^2.1.0",
+    "power-assert": "^0.10.1",
+    "source-map-support": "^0.2.9"
+  },
+  "files": [
+    "lib"
+  ],
+  "homepage": "https://github.com/mohayonao/tickable-timeout/",
+  "keywords": [
+    "timer",
+    "timeout",
+    "test"
+  ],
+  "license": "MIT",
+  "main": "lib/tickable-timeout.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohayonao/tickable-timeout.git"
+  },
+  "scripts": {
+    "build": "6to5 src --out-dir lib --source-maps-inline",
+    "test": "npm run build && mocha test/*.js"
+  }
+}
