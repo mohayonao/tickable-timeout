@@ -1,4 +1,5 @@
 # tickable-timeout
+[![Build Status](http://img.shields.io/travis/mohayonao/tickable-timeout.svg?style=flat)](https://travis-ci.org/mohayonao/tickable-timeout)
 [![NPM Version](http://img.shields.io/npm/v/tickable-timeout.svg?style=flat)](https://www.npmjs.org/package/tickable-timeout)
 
 Manual ticking `setTimeout`.
