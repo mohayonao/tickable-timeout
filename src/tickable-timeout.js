@@ -1,48 +1,56 @@
 "use strict";
 
 /**
-* The manual ticking `setTimeout`
-* @class TickableTimeout
-*/
+ * The manual ticking `setTimeout` / `clearTimeout`
+ * @class
+ * @property {function} callback
+ * @property {number} timeout
+ * @property {number} remain
+ */
 export class TickableTimeout {
   constructor() {
-    if (!(this instanceof TickableTimeout)) {
-      return new TickableTimeout();
-    }
+    this.callback = null;
+    this.timeout = Infinity;
+    this.remain = Infinity;
+  }
 
-    var _callback = null;
-    var _timeout = Infinity;
+  /**
+   * setTimeout
+   * @param {function} callback
+   * @param {number} timeout
+   * @public
+   */
+  set(callback, timeout) {
+    this.callback = callback;
+    this.timeout = Math.max(1, +timeout|0);
+    this.remain = this.timeout;
+  }
 
-    /**
-    * @api public
-    * @param {function} callback
-    * @param {number} timeout
-    */
-    this.set = (callback, timeout)=> {
-      _callback = callback;
-      _timeout = Math.max(1, +timeout);
-    };
+  /**
+   * clearTimeout
+   * @public
+   */
+  clear() {
+    this.callback = null;
+    this.timeout = Infinity;
+    this.remain = Infinity;
+  }
 
-    /**
-    * @api public
-    */
-    this.clear = ()=> {
-      _callback = null;
-      _timeout = Infinity;
-    };
-
-    /**
-    * @api public
-    * @param {number} tick
-    */
-    this.tick = (tick)=> {
-      if (typeof _callback === "function") {
-        _timeout -= tick;
-        if (_timeout <= 0) {
-          _callback();
-          _callback = null;
-        }
+  /**
+   * ticking
+   * @param {number} tick
+   * @public
+   */
+  tick(tick = 1) {
+    if (typeof this.callback === "function") {
+      tick = Math.max(1, +tick|0);
+      this.remain -= tick;
+      if (this.remain <= 0) {
+        this.callback();
+        this.callback = null;
+        this.timeout = Infinity;
+        this.remain = Infinity;
       }
-    };
+    }
   }
 }
