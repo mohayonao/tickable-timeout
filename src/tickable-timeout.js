@@ -4,26 +4,26 @@
  * The manual ticking `setTimeout` / `clearTimeout`
  * @class
  * @property {function} callback
- * @property {number} timeout
+ * @property {number} delay
  * @property {number} remain
  */
 export class TickableTimeout {
   constructor() {
     this.callback = null;
-    this.timeout = Infinity;
+    this.delay = Infinity;
     this.remain = Infinity;
   }
 
   /**
    * setTimeout
    * @param {function} callback
-   * @param {number} timeout
+   * @param {number} delay
    * @public
    */
-  set(callback, timeout) {
+  set(callback, delay) {
     this.callback = callback;
-    this.timeout = Math.max(1, +timeout|0);
-    this.remain = this.timeout;
+    this.delay = Math.max(1, +delay|0);
+    this.remain = this.delay;
   }
 
   /**
@@ -32,7 +32,7 @@ export class TickableTimeout {
    */
   clear() {
     this.callback = null;
-    this.timeout = Infinity;
+    this.delay = Infinity;
     this.remain = Infinity;
   }
 
@@ -48,7 +48,7 @@ export class TickableTimeout {
       if (this.remain <= 0) {
         this.callback();
         this.callback = null;
-        this.timeout = Infinity;
+        this.delay = Infinity;
         this.remain = Infinity;
       }
     }
