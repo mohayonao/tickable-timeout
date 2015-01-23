@@ -1,7 +1,7 @@
 {
   "name": "tickable-timeout",
-  "description": "Manual ticking `setTimeout`",
-  "version": "0.0.1",
+  "description": "Manual ticking setTimeout / clearTimeout",
+  "version": "0.0.2",
   "author": "mohayonao <mohayonao@gmail.com>",
   "bugs": {
     "url": "https://github.com/mohayonao/tickable-timeout/issues"
@@ -19,6 +19,8 @@
   "keywords": [
     "timer",
     "timeout",
+    "setTimeout",
+    "clearTimeout",
     "test"
   ],
   "license": "MIT",
