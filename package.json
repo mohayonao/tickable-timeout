@@ -10,8 +10,7 @@
     "6to5": "^2.13.3",
     "espower-6to5": "^1.1.0",
     "mocha": "^2.1.0",
-    "power-assert": "^0.10.1",
-    "source-map-support": "^0.2.9"
+    "power-assert": "^0.10.1"
   },
   "files": [
     "lib"
@@ -29,7 +28,7 @@
     "url": "https://github.com/mohayonao/tickable-timeout.git"
   },
   "scripts": {
-    "build": "6to5 src --out-dir lib --source-maps-inline",
+    "build": "6to5 src --out-dir lib",
     "test": "npm run build && mocha test/*.js"
   }
 }
