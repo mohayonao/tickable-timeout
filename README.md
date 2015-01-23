@@ -1,20 +1,31 @@
 # tickable-timeout
 [![Build Status](http://img.shields.io/travis/mohayonao/tickable-timeout.svg?style=flat)](https://travis-ci.org/mohayonao/tickable-timeout)
 [![NPM Version](http://img.shields.io/npm/v/tickable-timeout.svg?style=flat)](https://www.npmjs.org/package/tickable-timeout)
+[![6to5](http://img.shields.io/badge/module-6to5-yellow.svg?style=flat)](https://6to5.org/)
 
-Manual ticking `setTimeout`.
+Manual ticking `setTimeout` / `clearTimeout`
 
 ## Installation
 
+npm:
 ```
 npm install tickable-timeout
 ```
 
 ## API
 
-- `set(callback: function, timeout: number): void`
-- `clear(): void`
-- `tick(tick: number): void`
+### TickableTimeout
+  - `TickableTimeout()`
+
+#### Instance properties
+- `callback: function`
+- `delay: number`
+- `remain: number`
+
+### Instance methods
+  - `set(callback: function, delay: number): void`
+  - `clear(): void`
+  - `tick(tick: number = 1): void`
 
 ## Example
 
