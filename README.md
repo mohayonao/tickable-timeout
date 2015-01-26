@@ -1,7 +1,7 @@
 # tickable-timeout
-[![Build Status](http://img.shields.io/travis/mohayonao/tickable-timeout.svg?style=flat)](https://travis-ci.org/mohayonao/tickable-timeout)
-[![NPM Version](http://img.shields.io/npm/v/tickable-timeout.svg?style=flat)](https://www.npmjs.org/package/tickable-timeout)
-[![6to5](http://img.shields.io/badge/module-6to5-yellow.svg?style=flat)](https://6to5.org/)
+[![Build Status](http://img.shields.io/travis/mohayonao/tickable-timeout.svg?style=flat-square)](https://travis-ci.org/mohayonao/tickable-timeout)
+[![NPM Version](http://img.shields.io/npm/v/tickable-timeout.svg?style=flat-square)](https://www.npmjs.org/package/tickable-timeout)
+[![6to5](http://img.shields.io/badge/module-6to5-brightgreen.svg?style=flat-square)](https://6to5.org/)
 
 Manual ticking `setTimeout` / `clearTimeout`
 
